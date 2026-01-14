@@ -3,10 +3,10 @@ import random
 number = random.randint(-10000, 10000)
 
 if number < 0:
-    positive = -(-number %10)
-elif number >=0:
-    positive = number %10
-    
+    positive = -(-number % 10)
+elif number >= 0:
+    positive = number % 10
+
 if positive > 5:
     print(f"Last digit of {number} is {positive} and is greater than 5")
 elif positive == 0:
