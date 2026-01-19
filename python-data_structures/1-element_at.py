@@ -5,8 +5,7 @@ def element_at(my_list, idx):
         return None
     for i in my_list:
         if i == idx:
-            my_list[i] = []
-            return my_list
+            return my_list[i]
     return None
 
 if __name__ == "__main__":
