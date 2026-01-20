@@ -7,7 +7,3 @@ def element_at(my_list, idx):
         if i == idx:
             return my_list[i]
     return None
-
-if __name__ == "__main__":
-
-    print("{}".format(element_at(my_list, idx)))
