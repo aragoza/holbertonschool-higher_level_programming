@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 def multiple_returns(sentence):
-    if not sentence:
-        return None
+    if sentence == "":
+        return 0, None
     a = 0
     for i in sentence:
         a += 1
