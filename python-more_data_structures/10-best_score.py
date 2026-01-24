@@ -8,12 +8,19 @@ def best_score(a_dictionary):
     b = "yes"    
 
     for key in a_dictionary:
-        if a_dictionary[key] == None:
-            continue
         if b == "yes":
-            score = a_dictionary[key]
+            best_key = key
             b = "no"
-        if score < a_dictionary[key]:
-            score = a_dictionary[key]
+            continue
+        if a_dictionary[best_key] < a_dictionary[key]:
+            best_key = key
 
-    return score
+    return best_key
+
+
+a_dictionary = {'John': 12, 'Bob': 14, 'Mike': 14, 'Molly': 16, 'Adam': 10}
+best_key = best_score(a_dictionary)
+print("Best score: {}".format(best_key))
+
+best_key = best_score(None)
+print("Best score: {}".format(best_key))
