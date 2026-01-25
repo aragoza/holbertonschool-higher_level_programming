@@ -1,3 +1,12 @@
+"""
+This is the "0-add_integer" module.
+
+The 0-add module supplies one function, factorial().  For example,
+
+>>> add_integer(1, 2)
+3
+"""
+
 #!/usr/bin/python3
 
 def add_integer(a, b=98):
