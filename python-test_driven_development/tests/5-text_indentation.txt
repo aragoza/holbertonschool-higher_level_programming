@@ -1,5 +1,5 @@
-"""
-Module that defines a function to print text with indentation.
+"""Module that defines a function to print text with indentation.
+
 
 The function prints the given text and adds two new lines after each
 occurrence of '.', '?' or ':'.
