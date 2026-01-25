@@ -36,19 +36,19 @@ def matrix_divided(matrix, div):
 
     if type(matrix) is not list or len(matrix) == 0:
         raise TypeError(error_msg)
-    
+
     for row in matrix:
         if type(row) is not list or len(row) == 0:
             raise TypeError(error_msg)
         for element in row:
             if type(element) is bool or type(element) not in (int, float):
                 raise TypeError(error_msg)
-    
+
     first_row_length = len(matrix[0])
     for row in matrix[1:]:
         if len(row) != first_row_length:
             raise TypeError("Each row of the matrix must have the same size")
-    
+
     new_matrix = []
     for row in matrix:
         new_row = []
@@ -56,5 +56,5 @@ def matrix_divided(matrix, div):
             result = element / div
             new_row.append(float("{:.2f}".format(result)))
         new_matrix.append(new_row)
-    
+
     return new_matrix
