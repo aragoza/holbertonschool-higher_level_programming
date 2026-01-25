@@ -11,8 +11,6 @@ The 0-add module supplies one function, factorial().  For example,
 """
 
 
-#!/usr/bin/python3
-
 def add_integer(a, b=98):
     """Add two integers
 
