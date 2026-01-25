@@ -1,0 +1,29 @@
+"""
+Module that defines a function to print text with indentation.
+
+The function prints the given text and adds two new lines after each
+occurrence of '.', '?' or ':'.
+
+
+Examples:
+>>> text_indentation=__import__("5-text_indentation").text_indentation
+
+>>> text_indentation("Hello. How are you?")
+Hello.
+<BLANKLINE>
+ How are you?
+>>> text_indentation("Python is fun: right?")
+Python is fun:
+<BLANKLINE>
+ right?
+>>> text_indentation("No special characters")
+No special characters
+
+>>> text_indentation("")
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+"""
