@@ -2,11 +2,6 @@
 
 """
 This module defines a function to print a formatted name.
-
-Examples:
-
->>> say_my_name("John", "Doe")
-My name is John Doe
 """
 
 
