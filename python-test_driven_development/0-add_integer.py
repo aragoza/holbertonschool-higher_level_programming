@@ -5,6 +5,9 @@ The 0-add module supplies one function, factorial().  For example,
 
 >>> add_integer(1, 2)
 3
+
+>>> add_integer(100, -2)
+98
 """
 
 #!/usr/bin/python3
@@ -24,4 +27,4 @@ def add_integer(a, b=98):
     if type(b) not in (int, float):
         raise TypeError("b must be an integer")
 
-    return int(a) + int(b)
+    return int(a + b)

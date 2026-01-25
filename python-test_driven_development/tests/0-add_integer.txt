@@ -1,6 +1,5 @@
 """
 test file for the add_integer function
-"""
 
 >>> add_integer(1, 2)
 3
@@ -33,3 +32,5 @@ TypeError: a must be an integer
 Traceback (most recent call last):
     ...
 TypeError: add_integer() missing 1 required positional argument: 'a'
+
+"""
