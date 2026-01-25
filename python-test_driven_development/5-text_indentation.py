@@ -1,15 +1,12 @@
 #!/usr/bin/python3
-"""
-Module that defines a function to print text with indentation.
-
+"""Module that defines a function to print text with indentation.
 The text is printed to standard output, and two new lines are added after
 each occurrence of the characters '.', '?' and ':'.
 """
 
 
 def text_indentation(text):
-    """
-    Prints text with indentation.
+    """Prints text with indentation.
 
     Two new lines are printed after each '.', '?' or ':' character found
     in the text.
