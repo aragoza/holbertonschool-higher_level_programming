@@ -7,18 +7,18 @@ Class Square will create a square at the end and verify everything
 
 class Square:
     """
-    Class Square
+    Class Square define a new type where you can set the size of your square
     """
-    #init
+# init
     def __init__(self, size=0):
         self.__size = size
 
-    #get
+# get
     @property
     def size(self):
         return self.__size
 
-    #set
+# set
     @size.setter
     def size(self, value):
         if not isinstance(value, int):
