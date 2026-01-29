@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+Class Square will create a square at the end and verify everything
+"""
+
+
 class Square:
     """
     Class Square
