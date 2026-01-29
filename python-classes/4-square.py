@@ -9,20 +9,39 @@ class Square:
     """
     Class Square
     """
-    def __init__(self, size):
-        if not isinstance(size, int):
+    #init
+    def __init__(self, size=0):
+        self.__size = size
+
+    #get
+    @property
+    def size(self):
+        return self.__size
+
+    #set
+    @size.setter
+    def size(self, value):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if size < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
-        self.size = size
+        self.__size = value
 
-    def size(self, value: int):
-        self.size = value
-
-    def size(self: int) -> int:
-        return self.size
+    def area(self):
+        return self.__size ** 2
     
-    def area(self: int) -> int:
-        if not isinstance(self.size, int):
-            raise TypeError("size must be an integer")
-        return self.size * self.size
+
+
+Square = __import__('4-square').Square
+
+my_square = Square(89)
+print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+
+my_square.size = 3
+print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+
+try:
+    my_square.size = "5 feet"
+    print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+except Exception as e:
+    print(e)
