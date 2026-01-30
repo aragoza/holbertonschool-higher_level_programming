@@ -102,4 +102,4 @@ class Rectangle:
 # transform a square into a rectangle
     @classmethod
     def square(cls, size=0):
-        return (Rectangle(size, size))
+        return (cls(size, size))
