@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+Do the blue print of a square
+"""
+
+
 class Square:
     """
     Class Square
@@ -19,7 +24,7 @@ class Square:
     @size.setter
     def size(self, value: int):
         self.__size = value
-    
+
     def area(self: int) -> int:
         if not isinstance(self.size, int):
             raise TypeError("size must be an integer")
@@ -28,7 +33,7 @@ class Square:
     @property
     def position(self):
         return self.__position
-    
+
     @position.setter
     def position(self, value):
         self.__position = value
