@@ -57,4 +57,4 @@ class Rectangle:
         b = self.__width
         if a == 0 or b == 0:
             return ""
-        return f"{("#" * b + "\n") * (a - 1) + "#" * b}"
+        return ("#" * b + "\n") * (a - 1) + "#" * b
