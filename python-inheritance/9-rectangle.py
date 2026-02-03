@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Rectangle
-Init of the attribute width and height
+whole class rectangle with attribute width and height
+and the method area and str for human representation
 """
 
 
@@ -16,3 +17,10 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
+
+    def __str__(self):
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+    
+    def area(self):
+        return self.__width * self.__height
+    
