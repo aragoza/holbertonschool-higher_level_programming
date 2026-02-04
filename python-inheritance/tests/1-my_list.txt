@@ -2,7 +2,7 @@
 =========================
 Test: print_sorted basic
 =========================
->>> MyList = __import__('my_list').MyList
+>>> MyList = __import__('1-my_list').MyList
 >>> my_list = MyList([3, 1, 4, 2])
 >>> my_list.print_sorted()
 [1, 2, 3, 4]
