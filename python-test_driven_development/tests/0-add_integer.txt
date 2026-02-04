@@ -1,5 +1,5 @@
 """
-test file for the add_integer function
+Test file for the add_integer function.
 
 >>> import sys
 >>> sys.path.insert(0, '..')
@@ -32,4 +32,16 @@ Traceback (most recent call last):
     ...
 TypeError: add_integer() missing 1 required positional argument: 'a'
 
+# Test float overflow
+>>> import math
+>>> add_integer(1e308, 1e308)
+Traceback (most recent call last):
+    ...
+OverflowError: integer addition overflow
+
+# Test NaN conversion
+>>> add_integer(float('nan'), 2)
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
 """
