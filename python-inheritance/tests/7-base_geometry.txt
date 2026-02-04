@@ -1,138 +1,120 @@
 """
 ===========================
-BaseGeometry full doctest
+Extended BaseGeometry doctest
 ===========================
 
 Import the class
-----------------
+================
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Check class existence
----------------------
+Check class existence and docstring
+================
 >>> isinstance(BaseGeometry, type)
 True
-
-Create an instance
-------------------
->>> bg = BaseGeometry()
->>> type(bg) is BaseGeometry
+>>> bool(BaseGeometry.__doc__)
 True
 
-Check instance has no attributes
---------------------------------
->>> bg.__dict__
-{}
-
-Test area method existence
---------------------------
->>> hasattr(bg, "area")
+Create multiple instances
+========================
+>>> bg1 = BaseGeometry()
+>>> bg2 = BaseGeometry()
+>>> bg1 is not bg2
+True
+>>> bg1.__dict__ == bg2.__dict__
 True
 
 Test area method behavior
--------------------------
->>> bg.area()
+========================
+>>> bg1.area()
 Traceback (most recent call last):
 Exception: area() is not implemented
 
-Test area method return type
-----------------------------
->>> try:
-...     bg.area()
-... except Exception as e:
-...     type(e).__name__
-'Exception'
+Test integer_validator normal usage
+========================
+>>> bg1.integer_validator("width", 5)
+>>> bg1.integer_validator("height", 1)
 
-Test integer_validator method existence
----------------------------------------
->>> hasattr(bg, "integer_validator")
-True
-
-Test integer_validator with valid input
----------------------------------------
->>> bg.integer_validator("width", 1)
->>> bg.integer_validator("height", 10)
->>> bg.integer_validator("size", 999999)
-
-Test integer_validator returns None
------------------------------------
->>> result = bg.integer_validator("width", 5)
->>> result is None
-True
-
-Test integer_validator with non-integer types
----------------------------------------------
->>> bg.integer_validator("width", "5")
+Test integer_validator non-integer
+========================
+>>> bg1.integer_validator("width", "5")
 Traceback (most recent call last):
 TypeError: width must be an integer
 
->>> bg.integer_validator("height", 3.14)
+>>> bg1.integer_validator("height", 3.5)
 Traceback (most recent call last):
 TypeError: height must be an integer
 
->>> bg.integer_validator("size", [1, 2, 3])
-Traceback (most recent call last):
-TypeError: size must be an integer
-
->>> bg.integer_validator("depth", (4,))
+>>> bg1.integer_validator("depth", None)
 Traceback (most recent call last):
 TypeError: depth must be an integer
 
-Test integer_validator with boolean values
-------------------------------------------
->>> bg.integer_validator("flag", True)
+>>> bg1.integer_validator("size", [])
 Traceback (most recent call last):
-TypeError: flag must be an integer
+TypeError: size must be an integer
 
->>> bg.integer_validator("flag", False)
-Traceback (most recent call last):
-TypeError: flag must be an integer
-
-Test integer_validator with zero value
---------------------------------------
->>> bg.integer_validator("width", 0)
+Test integer_validator zero or negative
+========================
+>>> bg1.integer_validator("width", 0)
 Traceback (most recent call last):
 ValueError: width must be greater than 0
 
-Test integer_validator with negative values
--------------------------------------------
->>> bg.integer_validator("height", -1)
+>>> bg1.integer_validator("height", -2)
 Traceback (most recent call last):
 ValueError: height must be greater than 0
 
->>> bg.integer_validator("size", -100)
-Traceback (most recent call last):
-ValueError: size must be greater than 0
+Test integer_validator extreme values
+========================
+>>> import sys
+>>> bg1.integer_validator("huge", sys.maxsize)
+>>> bg1.integer_validator("small", 1)
 
-Test integer_validator error message uses name
-----------------------------------------------
->>> bg.integer_validator("radius", "10")
+Test integer_validator with boolean values
+========================
+>>> bg1.integer_validator("flag", True)
 Traceback (most recent call last):
-TypeError: radius must be an integer
+TypeError: flag must be an integer
 
->>> bg.integer_validator("radius", 0)
+>>> bg1.integer_validator("flag", False)
 Traceback (most recent call last):
-ValueError: radius must be greater than 0
+TypeError: flag must be an integer
 
-Test integer_validator with object value
-----------------------------------------
->>> bg.integer_validator("width", object)
+Test with object type
+========================
+>>> bg1.integer_validator("width", object)
 Traceback (most recent call last):
 TypeError: width must be an integer
 
->>> bg.integer_validator("height", object())
+>>> bg1.integer_validator("height", object())
 Traceback (most recent call last):
 TypeError: height must be an integer
 
-Test repeated calls do not change state
----------------------------------------
->>> bg.__dict__
+Test subclass overriding area
+========================
+>>> class Dummy(BaseGeometry):
+...     def area(self):
+...         return 42
+>>> d = Dummy()
+>>> d.area()
+42
+
+Test subclass integer_validator inheritance
+========================
+>>> d.integer_validator("length", 100)
+>>> d.integer_validator("width", 1)
+>>> d.__dict__
 {}
 
->>> bg.integer_validator("x", 5)
->>> bg.integer_validator("y", 6)
->>> bg.__dict__
+Test repeated calls do not modify instances
+========================
+>>> bg1.__dict__
+{}
+>>> bg1.integer_validator("x", 10)
+>>> bg1.__dict__
+{}
+>>> bg2.integer_validator("y", 20)
+>>> bg2.__dict__
 {}
 
-End of BaseGeometry doctest
----------------------------
+End of Extended BaseGeometry doctest
+========================
 """
