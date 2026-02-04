@@ -4,7 +4,7 @@ class that have an area and an integer validator method
 """
 
 
-class BaseGeometry:
+class BaseGeometry():
     """
     class that verify the type of every attribute passed in parameter
     """
