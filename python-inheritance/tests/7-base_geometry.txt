@@ -115,6 +115,30 @@ Test repeated calls do not modify instances
 >>> bg2.__dict__
 {}
 
+Test integer_validator with mixed valid and invalid inputs
+========================
+>>> bg1.integer_validator("my_int", 12)
+>>> bg1.integer_validator("width", 89)
+
+>>> try:
+...     bg1.integer_validator("name", "John")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+
+>>> try:
+...     bg1.integer_validator("age", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] age must be greater than 0
+
+>>> try:
+...     bg1.integer_validator("distance", -4)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] distance must be greater than 0
+
+
 End of Extended BaseGeometry doctest
 ========================
 """
