@@ -8,11 +8,11 @@ class BaseGeometry:
     """
     class that verify the type of every attribute passed in parameter
     """
-    
+
     def area(self):
         """
         Docstring for area
-        
+
         :param self: Description
         """
         raise Exception("area() is not implemented")
@@ -20,7 +20,7 @@ class BaseGeometry:
     def integer_validator(self, name, value):
         """
         Docstring for integer_validator
-        
+
         :param self: Description
         :param name: Description
         :param value: Description
