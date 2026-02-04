@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """BaseGeometry
-Empty class for a base of geometry
+class that have an area and an integer validator method
 """
 
 
