@@ -8,6 +8,11 @@ class BaseGeometry():
     """
     a base of geometry
     """
-    
+
     def area(self):
+        """
+        Docstring for area
+
+        :param self: Description
+        """
         raise Exception("area() is not implemented")
