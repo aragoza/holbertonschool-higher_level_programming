@@ -11,4 +11,4 @@ def lookup(obj):
 
     :param obj: Description
     """
-    return list(obj.__dict__)
+    return dir(obj)
