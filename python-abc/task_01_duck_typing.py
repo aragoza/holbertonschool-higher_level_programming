@@ -8,6 +8,7 @@ from math import pi
 
 from abc import ABC, abstractmethod
 
+
 class Shape(ABC):
     """
     Docstring for Animal
@@ -20,6 +21,7 @@ class Shape(ABC):
     @abstractmethod
     def perimeter(self):
         ...
+
 
 class Circle(Shape):
     """
@@ -35,6 +37,7 @@ class Circle(Shape):
     def perimeter(self):
         return 2 * pi * self.radius
 
+
 class Rectangle(Shape):
     """
     Docstring for Cat
@@ -46,10 +49,16 @@ class Rectangle(Shape):
 
     def area(self):
         return self.width * self.height
-    
+
     def perimeter(self):
         return 2 * (self.width + self.height)
 
+
 def shape_info(self):
+    """
+    Docstring for shape_info
+
+    :param self: Description
+    """
     print("{}: {}".format("Area", self.area()))
     print("{}: {}".format("perimeter", self.perimeter()))
