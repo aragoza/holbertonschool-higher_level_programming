@@ -11,22 +11,42 @@ class VerboseList(list):
     """
 
     def append(self, object):
-        print("Added [{}] to the list.".format(object))
-        return super().append(object)
+        """
+        Docstring for append
 
+        :param self: Description
+        :param object: Description
+        """
+        super().append(object)
+        print("Added [{}] to the list.".format(object))
 
     def extend(self, iterable):
+        """
+        Docstring for extend
+
+        :param self: Description
+        :param iterable: Description
+        """
         super().extend(iterable)
         print("Extended the list with [{}] items.".format(len(iterable)))
 
+    def remove(self, value):
+        """
+        Docstring for remove
 
-
-    def remove(self, value):        
+        :param self: Description
+        :param value: Description
+        """
         super().remove(value)
         print("Removed [{}] from the list.".format(value))
 
-
     def pop(self, index=-1):
+        """
+        Docstring for pop
+
+        :param self: Description
+        :param index: Description
+        """
         old_element = self[index]
         super().pop(index)
         print("Popped [{}] from the list.".format(old_element))
