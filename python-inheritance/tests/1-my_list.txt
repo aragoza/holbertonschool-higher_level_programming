@@ -26,4 +26,20 @@ Test: negative numbers
 [-3, -1, 0, 2]
 >>> my_list
 [-1, -3, 2, 0]
+
+=============
+Test: append
+=============
+>>> my_list = MyList([1, 2, 3])
+>>> my_list.append(4)
+>>> my_list
+[1, 2, 3, 4]
+>>> my_list.print_sorted()
+[1, 2, 3, 4]
+>>> my_list.append(0)
+>>> my_list
+[1, 2, 3, 4, 0]
+>>> my_list.print_sorted()
+[0, 1, 2, 3, 4]
+
 """
