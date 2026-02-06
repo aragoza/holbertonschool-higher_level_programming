@@ -81,4 +81,4 @@ def shape_info(shape):
     :param self: Description
     """
     print("{}: {}".format("Area", shape.area()))
-    print("{}: {}".format("perimeter", shape.perimeter()))
+    print("{}: {}".format("Perimeter", shape.perimeter()))
