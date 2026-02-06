@@ -67,7 +67,10 @@ class Circle(Shape):
     """
 
     def __init__(self, radius):
-        self.radius = radius
+        if radius >= 0:
+            self.radius = radius
+        else:
+            raise ValueError
 
     def area(self):
         """
