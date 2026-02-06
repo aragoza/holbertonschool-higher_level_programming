@@ -45,6 +45,13 @@ class Rectangle(Shape):
     """
 
     def __init__(self, width, height):
+        """
+        Docstring for __init__
+        
+        :param self: Description
+        :param width: Description
+        :param height: Description
+        """
         if width < 0:
             self.width = width
         else:
@@ -77,6 +84,12 @@ class Circle(Shape):
     """
 
     def __init__(self, radius):
+        """
+        Docstring for __init__
+        
+        :param self: Description
+        :param radius: Description
+        """
         if radius >= 0:
             self.radius = radius
         else:
