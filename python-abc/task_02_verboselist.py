@@ -10,32 +10,29 @@ class VerboseList(list):
     Class VerboseList
     """
 
-    def append(self, object):
+class VerboseList(list):
+    """
+    Class VerboseList
+    """
+
+    def append(self, item):
         """
         Docstring for append
-
-        :param self: Description
-        :param object: Description
         """
-        super().append(object)
-        print("Added [{}] to the list.".format(object))
+        super().append(item)
+        print("Added [{}] to the list.".format(item))
 
     def extend(self, iterable):
         """
         Docstring for extend
-
-        :param self: Description
-        :param iterable: Description
         """
-        super().extend(iterable)
-        print("Extended the list with [{:d}] items.".format(len(iterable)))
+        items = list(iterable)
+        super().extend(items)
+        print("Extended the list with [{}] items.".format(len(items)))
 
     def remove(self, value):
         """
         Docstring for remove
-
-        :param self: Description
-        :param value: Description
         """
         print("Removed [{}] from the list.".format(value))
         super().remove(value)
@@ -43,9 +40,8 @@ class VerboseList(list):
     def pop(self, index=-1):
         """
         Docstring for pop
-
-        :param self: Description
-        :param index: Description
         """
-        print("Popped [{}] from the list.".format(self[index]))
-        super().pop(index)
+        item = self[index]
+        result = super().pop(index)
+        print("Popped [{}] from the list.".format(item))
+        return result
