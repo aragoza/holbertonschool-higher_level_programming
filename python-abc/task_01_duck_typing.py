@@ -29,7 +29,7 @@ class Circle(Shape):
     """
 
     def __init__(self, radius):
-        self.radius = float(radius)
+        self.radius = abs(radius)
 
     def area(self):
         """
