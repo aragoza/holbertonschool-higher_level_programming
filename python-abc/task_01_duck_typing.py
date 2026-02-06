@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Docstring for holbertonschool-higher_level_programming.python-abc.task_00_abc
+holbertonschool-higher_level_programming.python-abc.task_00_abc
 """
 
 from math import pi
@@ -11,7 +11,7 @@ from abc import ABC, abstractmethod
 
 class Shape(ABC):
     """
-    Docstring for Shape
+    Shape
     """
 
     @abstractmethod
@@ -25,7 +25,7 @@ class Shape(ABC):
 
 class Circle(Shape):
     """
-    Docstring for Circle
+    Circle
     """
 
     def __init__(self, radius):
@@ -33,7 +33,7 @@ class Circle(Shape):
 
     def area(self):
         """
-        Docstring for area
+        area
         
         :param self: Description
         """
@@ -41,7 +41,7 @@ class Circle(Shape):
 
     def perimeter(self):
         """
-        Docstring for perimeter
+        perimeter
         
         :param self: Description
         """
@@ -50,7 +50,7 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     """
-    Docstring for Rectangle
+    Rectangle
     """
 
     def __init__(self, width, height):
@@ -59,7 +59,7 @@ class Rectangle(Shape):
 
     def area(self):
         """
-        Docstring for area
+        area
         
         :param self: Description
         """
@@ -67,7 +67,7 @@ class Rectangle(Shape):
     
     def perimeter(self):
         """
-        Docstring for perimeter
+        perimeter
         
         :param self: Description
         """
@@ -76,7 +76,7 @@ class Rectangle(Shape):
 
 def shape_info(self):
     """
-    Docstring for shape_info
+    shape_info
     
     :param self: Description
     """
