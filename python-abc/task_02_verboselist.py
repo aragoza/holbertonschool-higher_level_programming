@@ -18,7 +18,7 @@ class VerboseList(list):
         :param object: Description
         """
         super().append(object)
-        print("Added [{:d}] to the list.".format(object))
+        print("Added [{}] to the list.".format(object))
 
     def extend(self, iterable):
         """
@@ -28,7 +28,7 @@ class VerboseList(list):
         :param iterable: Description
         """
         super().extend(iterable)
-        print("Extended the list with [{:d}] items.".format(len(iterable)))
+        print("Extended the list with [{}] items.".format(len(iterable)))
 
     def remove(self, value):
         """
@@ -37,7 +37,7 @@ class VerboseList(list):
         :param self: Description
         :param value: Description
         """
-        print("Removed [{:d}] from the list.".format(value))
+        print("Removed [{}] from the list.".format(value))
         super().remove(value)
 
 
