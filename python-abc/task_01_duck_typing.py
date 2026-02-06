@@ -41,8 +41,14 @@ class Rectangle(Shape):
     """
 
     def __init__(self, width, height):
-        self.width = width
-        self.height = height
+        if width < 0:
+            self.width = width
+        else:
+            raise ValueError
+        if height < 0:
+            self.height = height
+        else:
+            raise ValueError
 
     def area(self):
         """
