@@ -54,8 +54,8 @@ class Rectangle(Shape):
     """
 
     def __init__(self, width, height):
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     def area(self):
         """
@@ -63,7 +63,7 @@ class Rectangle(Shape):
 
         :param self: Description
         """
-        return self.width * self.height
+        return self.__width * self.__height
 
     def perimeter(self):
         """
@@ -71,7 +71,7 @@ class Rectangle(Shape):
 
         :param self: Description
         """
-        return 2 * (self.width + self.height)
+        return 2 * (self.__width + self.__height)
 
 
 def shape_info(self):
