@@ -1,105 +1,64 @@
 #!/usr/bin/python3
 
 """
-3 Class 1 base class and 2 subclass
+Docstring for holbertonschool-higher_level_programming.python-abc.task_00_abc
 """
 
+from math import pi
 
 from abc import ABC, abstractmethod
 
 
-from math import pi
-
-
 class Shape(ABC):
     """
-    Class Shape
+    Docstring for Shape
     """
 
     @abstractmethod
     def area(self):
-        """
-        Docstring for area
-
-        :param self: Description
-        """
-        pass
+        ...
 
     @abstractmethod
     def perimeter(self):
-        """
-        Docstring for perimeter
-
-        :param self: Description
-        """
-        pass
-
-
-class Rectangle(Shape):
-    """
-    Class Rectangle
-    """
-
-    def __init__(self, width, height):
-        if width < 0:
-            self.width = width
-        else:
-            raise ValueError
-        if height < 0:
-            self.height = height
-        else:
-            raise ValueError
-
-    def area(self):
-        """
-        Docstring for area
-
-        :param self: Description
-        """
-        return self.width * self.height
-
-    def perimeter(self):
-        """
-        Docstring for perimeter
-
-        :param self: Description
-        """
-        return 2 * (self.width + self.height)
+        ...
 
 
 class Circle(Shape):
     """
-    Class Circle
+    Docstring for Circle
     """
 
     def __init__(self, radius):
-        if radius >= 0:
-            self.radius = radius
-        else:
-            raise ValueError
+        self.radius = radius
 
     def area(self):
-        """
-        Docstring for area
-
-        :param self: Description
-        """
-        return pi * (self.radius ** 2)
+        return pi * self.radius * self.radius
 
     def perimeter(self):
-        """
-        Docstring for perimeter
-
-        :param self: Description
-        """
         return 2 * pi * self.radius
 
 
-def shape_info(self):
+class Rectangle(Shape):
     """
-    Docstring for shape_info
+    Docstring for Rectangle
+    """
 
-    :param self: Description
-    """
-    print("Area: {}".format(self.area()))
-    print("Perimeter: {}".format(self.perimeter()))
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+    
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+
+
+def shape_info(self):
+
+
+
+
+
+    print("{}: {}".format("Area", self.area()))
+    print("{}: {}".format("perimeter", self.perimeter()))
