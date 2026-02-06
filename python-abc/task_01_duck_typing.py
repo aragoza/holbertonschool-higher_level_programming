@@ -45,7 +45,7 @@ class Circle(Shape):
 
         :param self: Description
         """
-        return 2 * pi * abs(self.radius)
+        return 2 * pi * self.radius
 
 
 class Rectangle(Shape):
