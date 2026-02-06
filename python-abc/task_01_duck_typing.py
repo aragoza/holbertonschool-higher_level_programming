@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-holbertonschool-higher_level_programming.python-abc.task_00_abc
+Class Shape
 """
 
 from math import pi
@@ -16,11 +16,11 @@ class Shape(ABC):
 
     @abstractmethod
     def area(self):
-        ...
+        pass
 
     @abstractmethod
     def perimeter(self):
-        ...
+        pass
 
 
 class Circle(Shape):
