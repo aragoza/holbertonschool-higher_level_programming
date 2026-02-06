@@ -20,6 +20,16 @@ class VerboseList(list):
         super().append(object)
         print("Added [{}] to the list.".format(object))
 
+    def extend(self, iterable):
+        """
+        Docstring for extend
+
+        :param self: Description
+        :param iterable: Description
+        """
+        super().extend(iterable)
+        print("Extended the list with [{}] items.".format(len(iterable)))
+
     def remove(self, value):
         """
         Docstring for remove
