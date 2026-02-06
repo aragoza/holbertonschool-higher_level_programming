@@ -32,9 +32,19 @@ class Circle(Shape):
         self.radius = radius
 
     def area(self):
+        """
+        Docstring for area
+        
+        :param self: Description
+        """
         return pi * self.radius * self.radius
 
     def perimeter(self):
+        """
+        Docstring for perimeter
+        
+        :param self: Description
+        """
         return 2 * pi * self.radius
 
 
@@ -48,17 +58,27 @@ class Rectangle(Shape):
         self.height = height
 
     def area(self):
+        """
+        Docstring for area
+        
+        :param self: Description
+        """
         return self.width * self.height
     
     def perimeter(self):
+        """
+        Docstring for perimeter
+        
+        :param self: Description
+        """
         return 2 * (self.width + self.height)
 
 
 def shape_info(self):
-
-
-
-
-
+    """
+    Docstring for shape_info
+    
+    :param self: Description
+    """
     print("{}: {}".format("Area", self.area()))
     print("{}: {}".format("perimeter", self.perimeter()))
