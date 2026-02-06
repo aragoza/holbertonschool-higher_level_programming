@@ -48,6 +48,5 @@ class VerboseList(list):
         :param self: Description
         :param index: Description
         """
-        old_element = self[index]
-        print("Popped [{}] from the list.".format(old_element))
+        print("Popped [{}] from the list.".format(self[index]))
         super().pop(index)
