@@ -66,11 +66,8 @@ class Circle(Shape):
     Class Circle
     """
 
-    def __init__(self, radius):
-        if radius < 0 :
-            self.radius = 0
-        else:
-            self.radius = radius
+    def __init__(self, radius > 0):
+        self.radius = radius
 
     def area(self):
         """
