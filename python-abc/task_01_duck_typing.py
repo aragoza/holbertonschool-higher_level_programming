@@ -16,11 +16,6 @@ class Shape(ABC):
     Class Shape
     """
     @abstractmethod
-    def __init__(self):
-        pass
-
-
-    @abstractmethod
     def area(self):
         """
         Docstring for area
@@ -47,7 +42,7 @@ class Rectangle(Shape):
     def __init__(self, width, height):
         """
         Docstring for __init__
-        
+
         :param self: Description
         :param width: Description
         :param height: Description
@@ -86,7 +81,7 @@ class Circle(Shape):
     def __init__(self, radius):
         """
         Docstring for __init__
-        
+
         :param self: Description
         :param radius: Description
         """
