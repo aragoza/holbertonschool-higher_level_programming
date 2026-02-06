@@ -30,16 +30,6 @@ class VerboseList(list):
         super().extend(iterable)
         print("Extended the list with [{}] items.".format(len(iterable)))
 
-    def remove(self, value):
-        """
-        Docstring for remove
-
-        :param self: Description
-        :param value: Description
-        """
-        super().remove(value)
-        print("Removed [{}] from the list.".format(value))
-
     def pop(self, index=-1):
         """
         Docstring for pop
