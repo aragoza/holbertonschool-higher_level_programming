@@ -37,7 +37,7 @@ class Circle(Shape):
 
         :param self: Description
         """
-        return pi * (self.radius ** 2)
+        return "{:14f}".format(pi * (self.radius ** 2))
 
     def perimeter(self):
         """
@@ -45,7 +45,7 @@ class Circle(Shape):
 
         :param self: Description
         """
-        return (pi * self.radius *2)
+        return "{:14f}".format(pi * self.radius *2)
 
 
 class Rectangle(Shape):
