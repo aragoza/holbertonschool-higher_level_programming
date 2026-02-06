@@ -28,7 +28,7 @@ class VerboseList(list):
         :param iterable: Description
         """
         super().extend(iterable)
-        print("Extended the list with [{}] items.".format(len(iterable)))
+        print("Extended the list with [{:d}] items.".format(len(iterable)))
 
     def remove(self, value):
         """
