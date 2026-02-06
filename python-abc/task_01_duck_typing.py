@@ -28,7 +28,7 @@ class Circle(Shape):
     Circle
     """
 
-    def __init__(self, radius: float):
+    def __init__(self, radius):
         self.radius = radius
 
     def area(self):
