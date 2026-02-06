@@ -15,6 +15,10 @@ class Shape(ABC):
     """
     Class Shape
     """
+    @abstractmethod
+    def __init__(self):
+        pass
+
 
     @abstractmethod
     def area(self):
