@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+
+"""
+Docstring
+"""
+
+
+import sys
+
+
+def write_file(filename="", text=""):
+    """
+    Docstring for write_file
+
+    :param filename: Description
+    :param text: Description
+    """
+
+    with open(filename, 'w', encoding="utf-8") as f:
+        return f.write(text)
