@@ -5,9 +5,6 @@ Docstring
 """
 
 
-import sys
-
-
 def write_file(filename="", text=""):
     """
     Docstring for write_file
