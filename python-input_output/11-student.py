@@ -4,6 +4,7 @@
 Docstring
 """
 
+
 class Student:
     """
     Docstring for Student
@@ -43,8 +44,8 @@ class Student:
 
     def reload_from_json(self, json):
         """
-        Public method def reload_from_json(self, json): that replaces all attributes of the Student instance
-        
+        Public method
+
         :param self: Description
         :param json: Description
         """
