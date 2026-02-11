@@ -8,7 +8,7 @@ Docstring
 def read_file(filename=""):
     """
     Docstring for read_file
-    
+
     :param filename: Description
     """
 
