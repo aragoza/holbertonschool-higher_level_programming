@@ -5,9 +5,6 @@ Docstring
 """
 
 
-import sys
-
-
 def append_write(filename="", text=""):
     """
     Docstring for append_write
