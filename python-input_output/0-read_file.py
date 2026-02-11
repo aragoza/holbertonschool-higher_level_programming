@@ -12,5 +12,5 @@ def read_file(filename=""):
     :param filename: Description
     """
 
-    with open(filename, encoding="utf-8") as f:
+    with open(filename, 'r', encoding="utf-8") as f:
         print(f.read())
