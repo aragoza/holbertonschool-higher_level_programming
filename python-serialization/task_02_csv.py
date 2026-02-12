@@ -4,12 +4,14 @@
 Docstring for task_02_csv
 """
 
-import json, csv
+import json
+import csv
+
 
 def convert_csv_to_json(filename):
     """
     Docstring for convert_csv_to_json
-    
+
     :param filename: Description
     """
     row = []
@@ -18,6 +20,6 @@ def convert_csv_to_json(filename):
         reader = csv.DictReader(csvfile)
         for i in reader:
             row.append(i)
-    
+
     with open('data.json', 'w', ) as f:
         json.dump(row, f)
