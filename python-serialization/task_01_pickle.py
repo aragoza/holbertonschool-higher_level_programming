@@ -43,8 +43,6 @@ class CustomObject:
         :param self: Description
         :param filename: Description
         """
-        if filename is None or self is None:
-            return None
         with open(filename, 'wb') as f:
             pickle.dump(self, f)
 
