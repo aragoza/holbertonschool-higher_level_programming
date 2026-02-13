@@ -43,8 +43,11 @@ class CustomObject:
         :param self: Description
         :param filename: Description
         """
-        with open(filename, 'wb') as f:
-            pickle.dump(self, f)
+        try:
+            with open(filename, 'wb') as f:
+                pickle.dump(self, f)
+        except:
+            return None
 
     @classmethod
     def deserialize(cls, filename):
@@ -54,7 +57,8 @@ class CustomObject:
         :param cls: Description
         :param filename: Description
         """
-        if filename is None or cls is None:
+        try:
+            with open(filename, 'rb') as f:
+                return pickle.load(f)
+        except:
             return None
-        with open(filename, 'rb') as f:
-            return pickle.load(f)
