@@ -14,7 +14,7 @@ def fetch_and_print_posts():
             print("{}".format(i['title']))
 
     except Exception as e:
-        print("{}".format(e))
+        print("Error: {}".format(e))
 
 
 def fetch_and_save_posts():
@@ -39,5 +39,6 @@ def fetch_and_save_posts():
 
                 writer.writeheader()
                 writer.writerows(posts_list)
+
     except Exception as e:
-        print("error: {}".format(e))
+        print("Error: {}".format(e))
