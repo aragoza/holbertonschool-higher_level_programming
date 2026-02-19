@@ -48,6 +48,3 @@ def fetch_and_save_posts():
 
         for line in listing:
             writer.writerow(line)
-
-fetch_and_print_posts()
-fetch_and_save_posts()
