@@ -1,52 +1,53 @@
 #!/usr/bin/python3
 """
-Docstring
+Docstring for restful-api.task_02_requests
 """
-
 import requests
 import csv
 
 
 def fetch_and_print_posts():
     """
-    Docstring
+    Docstring for fetch_and_print_posts
     """
-    url = "https://jsonplaceholder.typicode.com/posts"
-    r = requests.get(url)
-    print("Status Code: ".format(r.status_code))
+    URL = "https://jsonplaceholder.typicode.com/posts"
 
-    if r.status_code != 200:
-        return
+    responce = requests.get(URL)
+    print(f"Status Code: {responce.status_code}")
+
+    if responce.status_code != 200:
+        return()
     else:
-        temp = r.json()
-        for i in temp:
-            print("{}".format(i['title']))
+        data = responce.json()
+        for post in data:
+            print(post["title"])
 
 
 def fetch_and_save_posts():
     """
-    Docstring
+    Docstring for fetch_and_save_posts
     """
-    url = "https://jsonplaceholder.typicode.com/posts"
-    r = requests.get(url)
+    URL = "https://jsonplaceholder.typicode.com/posts"
 
-    if r.status_code != 200:
-        return
+    responce = requests.get(URL)
+
+    if responce.status_code != 200:
+        return()
     else:
-        data = r.json()
+        data = responce.json()
 
         data = [
             [post["id"], post["title"], post["body"]]
             for post in data
         ]
 
-    with open("posts.csv", "w", newline="", encoding="utf-8") as file:
-        writer = csv.writer(file)
+    with open("posts.csv", "w", newline="", encoding="utf-8") as csv_file:
+        csv_write = csv.writer(csv_file)
 
-        writer.writerow(["id", "title", "body"])
+        csv_write.writerow(["id", "title", "body"])
 
         for line in data:
-            writer.writerow(line)
+            csv_write.writerow(line)
 
 fetch_and_print_posts()
 fetch_and_save_posts()
