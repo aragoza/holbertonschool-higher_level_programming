@@ -15,28 +15,20 @@ class Underclass(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/json")
             self.end_headers()
 
-            self.wfile.write(json.dumps(data).encode())
+            self.wfile.write(json.dumps(data).encode(encoding="utf-8"))
 
         elif self.path == "/status":
             self.send_response(200)
             self.send_header("Content-Type", "text/plain")
             self.end_headers()
 
+            self.wfile.write(b"OK")
 
         else:
             self.send_response(404)
-            print("data not found")
+            self.send_error(404, "Not Found", "No {}".format(self.path))
 
-        message = "Hello, this is a simple API!"
-        encode_message = message.encode()
 
-        self.send_response(200)
-
-        self.send_header("Content-Type", "text/plain; charset=utf-8")
-        self.send_header("Content-Length", str(len(encode_message)))
-        self.end_headers()
-
-        self.wfile.write(encode_message)
 
 def run(server_class=HTTPServer, handler_class=Underclass):
     server_address = ('', 8000)
