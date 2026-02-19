@@ -47,7 +47,7 @@ class Underclass(BaseHTTPRequestHandler):
             self.wfile.write(info_serialize)
 
         else:
-            self.send_error(404, "Endpoint not found", "Wrong or no Endpoint: {}".format(self.path))
+            self.send_error(code=404, message="Endpoint not found", explain="Wrong or no Endpoint: {}".format(self.path))
 
 
 
