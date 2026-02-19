@@ -21,12 +21,14 @@ def fetch_and_save_posts():
     url = "https://jsonplaceholder.typicode.com/posts"
     r = requests.get(url)
 
-    if r.status_code == 200:
+    if r.status_code != 200:
+        return
+    else:
         data = r.json()
 
         posts_list = []
         for post in data:
-                posts_list.append({
+            posts_list.append({
                 "id": post["id"],
                 "title": post["title"],
                 "body": post["body"]
@@ -38,5 +40,3 @@ def fetch_and_save_posts():
 
             writer.writeheader()
             writer.writerows(posts_list)
-    else:
-        return
