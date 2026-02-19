@@ -44,8 +44,9 @@ def fetch_and_save_posts():
             })
 
         with open("posts.csv", "w", newline="", encoding="utf-8") as file:
-            fieldnames = ["id", "title", "body"]
-            writer = csv.DictWriter(file, fieldnames=fieldnames)
+            writer = csv.writer(file)
 
-            writer.writeheader()
-            writer.writerows(posts_list)
+            writer.writerow(["id", "title", "body"])
+
+            for line in posts_list:
+                writer.writerows(line)
