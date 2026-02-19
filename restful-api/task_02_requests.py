@@ -1,13 +1,19 @@
 #!/usr/bin/python3
+"""
+Docstring
+"""
 
 import requests
 import csv
 
 
 def fetch_and_print_posts():
+    """
+    Docstring
+    """
     url = "https://jsonplaceholder.typicode.com/posts"
     r = requests.get(url)
-    print(r.status_code)
+    print("Status Code: ".format(r.status_code))
 
     if r.status_code != 200:
         return
@@ -18,6 +24,9 @@ def fetch_and_print_posts():
 
 
 def fetch_and_save_posts():
+    """
+    Docstring
+    """
     url = "https://jsonplaceholder.typicode.com/posts"
     r = requests.get(url)
 
