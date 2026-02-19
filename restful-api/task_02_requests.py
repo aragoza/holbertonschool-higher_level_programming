@@ -38,7 +38,7 @@ def fetch_and_save_posts():
         listing =[]
         for post in data:
             listing.append([
-                [post["id"], post["title"], post["body"]]
+                post["id"], post["title"], post["body"]
             ])
 
     with open("posts.csv", "w", newline="", encoding="utf-8") as file:
@@ -47,7 +47,7 @@ def fetch_and_save_posts():
         writer.writerow(["id", "title", "body"])
 
         for line in listing:
-            writer.writerows(line)
+            writer.writerow(line)
 
 fetch_and_print_posts()
 fetch_and_save_posts()
