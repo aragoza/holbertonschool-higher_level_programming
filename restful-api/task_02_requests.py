@@ -50,3 +50,6 @@ def fetch_and_save_posts():
 
             for line in posts_list:
                 writer.writerows(line)
+
+fetch_and_print_posts()
+fetch_and_save_posts()
