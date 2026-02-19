@@ -35,16 +35,18 @@ def fetch_and_save_posts():
     else:
         data = r.json()
 
-        listing =[]
-        for post in data:
-            listing.append([
-                post["id"], post["title"], post["body"]
-            ])
+        data = [
+            [post["id"], post["title"], post["body"]]
+            for post in data
+        ]
 
     with open("posts.csv", "w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
 
         writer.writerow(["id", "title", "body"])
 
-        for line in listing:
+        for line in data:
             writer.writerow(line)
+
+fetch_and_print_posts()
+fetch_and_save_posts()
