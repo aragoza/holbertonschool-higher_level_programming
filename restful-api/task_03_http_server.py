@@ -11,13 +11,12 @@ class Underclass(BaseHTTPRequestHandler):
         Docstring for do_Get
         """
         if self.path == "/":
-            message = b"Hello this is a simple API!"
+            message = "Hello this is a simple API!"
 
             self.send_response(200)
             self.send_header("Content-Type", "text/plain")
-            self.send_header("Content-Length", str(len(message)))
             self.end_headers()
-            self.wfile.write(message)
+            self.wfile.write(message.encode("utf-8"))
             return
         elif self.path == "/data":
             self.send_response(200)
@@ -29,9 +28,8 @@ class Underclass(BaseHTTPRequestHandler):
             data_serialize = json.dumps(data).encode(encoding="utf-8")
 
             self.send_header("Content-Type", "application/json")
-            self.send_header("Content-Length", str(len(data_serialize)))
             self.end_headers()
-            self.wfile.write(data_serialize)
+            self.wfile.write(data_serialize.encode("utf-8"))
             return
         
         elif self.path == "/status":
