@@ -19,14 +19,13 @@ class Underclass(BaseHTTPRequestHandler):
             self.wfile.write(message.encode("utf-8"))
             return
         elif self.path == "/data":
-            self.send_response(200)
             data = {
                 "name": "John",
                 "age": 30,
                 "city": "New York"
             }
-            data_serialize = json.dumps(data).encode(encoding="utf-8")
-
+            data_serialize = json.dumps(data)
+            self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
             self.wfile.write(data_serialize.encode("utf-8"))
@@ -42,7 +41,7 @@ class Underclass(BaseHTTPRequestHandler):
         self.send_response(404)
         self.send_header("Content-Type", "text/plain")
         self.end_headers
-        self.wfile.write("Endpoint not found")
+        self.wfile.write("Endpoint not found".encode("utf-8"))
 
 
 
