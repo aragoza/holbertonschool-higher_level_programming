@@ -39,8 +39,10 @@ class Underclass(BaseHTTPRequestHandler):
             self.wfile.write("Ok".encode("utf-8"))
             return
 
-
-        self.send_error(code=404, message="Endpoint not found", explain="Wrong or no Endpoint: {}".format(self.path))
+        self.send_response(404)
+        self.send_header("Content-Type", "text/plain")
+        self.end_headers
+        self.wfile.write("Endpoint not found")
 
 
 
