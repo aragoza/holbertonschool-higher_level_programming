@@ -5,6 +5,8 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 
+users = {}
+
 @app.route("/status")
 def go_get_status_code():
     """
@@ -12,7 +14,7 @@ def go_get_status_code():
     """
     return "OK", 200
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def home():
     """
     Docstring for home
@@ -55,6 +57,7 @@ def post_a_user():
         return jsonify({"error": "Username already exists"}), 409
 
     users[username] = {
+        "username": username,
         "name": data.get("name"),
         "age": data.get("age"),
         "city": data.get("city")
