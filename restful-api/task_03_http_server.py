@@ -33,19 +33,6 @@ class Underclass(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(data_serialize)
 
-        elif self.path == "/info":
-            info = {
-                "version": "1.0",
-                "description": "A simple API built with http.server"
-            }
-            info_serialize = json.dumps(info).encode(encoding="utf-8")
-
-            self.send_response(200)
-            self.send_header("Content-Type", "application/json")
-            self.send_header("Content-Length", str(len(info_serialize)))
-            self.end_headers()
-            self.wfile.write(info_serialize)
-
         else:
             self.send_error(code=404, message="Endpoint not found", explain="Wrong or no Endpoint: {}".format(self.path))
 
