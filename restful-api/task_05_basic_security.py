@@ -12,16 +12,7 @@ from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identi
 app = Flask(__name__)
 auth = HTTPBasicAuth()
 
-users = {
-    "admin": {
-        "password": generate_password_hash("admin123"),
-        "role": "admin"
-    },
-    "user": {
-        "password": generate_password_hash("user123"),
-        "role": "user"
-    }
-}
+users = {}
 
 
 @auth.verify_password
