@@ -4,8 +4,6 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
-
 
 @app.route("/status")
 def go_get_status_code():
@@ -29,14 +27,43 @@ def go_get_data():
     data_username = list(users.keys())
     return jsonify(data_username), 200
 
-@app.route("/data/<string:username>", methods=["GET"])
+@app.route("/users/<string:username>", methods=["GET"])
 def go_go_go_data(username):
     """
     Docstring for go_go_go_data
     """
-    return jsonify(users[username])
+    if username not in users:
+        return {"error": "User not found"}, 404
+    return jsonify(users[username]), 200
 
+@app.route("/add_user", methods=["POST"])
+def post_a_user():
+    if not request.is_json:
+        return jsonify({"error": "Invalid JSON"}), 400
 
+    data = request.get_json()
+
+    if data is None:
+        return jsonify({"error": "Invalid JSON"}), 400
+
+    if "username" not in data or not data["username"]:
+        return jsonify({"error": "Username is required"}), 400
+
+    username = data["username"]
+
+    if username in users:
+        return jsonify({"error": "Username already exists"}), 409
+
+    users[username] = {
+        "name": data.get("name"),
+        "age": data.get("age"),
+        "city": data.get("city")
+    }
+
+    return jsonify({
+        "message": "User added",
+        "user": users[username]
+    }), 201
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
