@@ -17,8 +17,8 @@ class Underclass(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "text/plain")
             self.send_header("Content-Length", str(len(message)))
             self.end_headers()
-
             self.wfile.write(message)
+            return
         elif self.path == "/data":
             self.send_response(200)
             data = {
@@ -32,6 +32,14 @@ class Underclass(BaseHTTPRequestHandler):
             self.send_header("Content-Length", str(len(data_serialize)))
             self.end_headers()
             self.wfile.write(data_serialize)
+            return
+        
+        elif self.path == "/status":
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write("Ok".encode("utf-8"))
+            return
 
         else:
             self.send_error(code=404, message="Endpoint not found", explain="Wrong or no Endpoint: {}".format(self.path))
