@@ -14,10 +14,10 @@ class Underclass(BaseHTTPRequestHandler):
         Docstring for do_Get
         """
         if self.path == "/":
-            message = "Hello this is a simple API!"
+            message = "Hello, this is a simple API!"
 
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(message.encode("utf-8"))
             return
@@ -29,20 +29,20 @@ class Underclass(BaseHTTPRequestHandler):
             }
             data_serialize = json.dumps(data)
             self.send_response(200)
-            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-type", "application/json")
             self.end_headers()
             self.wfile.write(data_serialize.encode("utf-8"))
             return
 
         elif self.path == "/status":
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write("OK".encode("utf-8"))
             return
 
         self.send_response(404)
-        self.send_header("Content-Type", "text/plain")
+        self.send_header("Content-type", "text/plain")
         self.end_headers
         self.wfile.write("Endpoint not found".encode("utf-8"))
 
