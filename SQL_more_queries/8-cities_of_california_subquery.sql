@@ -1,0 +1,9 @@
+-- select all the cities of california in the foreign data 
+SELECT id, name
+FROM cities
+WHERE state_id = (
+    SELECT id
+    FROM states
+    WHERE name = "California"
+)
+ORDER BY id ASC;
